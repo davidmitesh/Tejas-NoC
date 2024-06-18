@@ -1,0 +1,634 @@
+[Configuration]
+
+EmulatorType: pin
+Benchmark: /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/503.bwaves_r/exe/bwaves_r_base.mytest-m64
+Schedule: Thu Feb 08 16:14:16 NPT 2024
+
+[Main Memory Configuration]
+
+[Main Memory Configuration]
+RAM frequency:800.0 MHz
+Num Channels: 2
+Num Ranks: 2
+Num Banks: 8
+Row Buffer Policy: OpenPage
+Scheduling Policy: RankThenBankRoundRobin
+Queuing Structure: PerRank
+
+[Translator Statistics]
+
+Java thread	=	0
+Data Read	=	134424 bytes
+Number of micro-ops		=	36497
+Number of handled CISC instructions	=	35412
+Number of PIN CISC instructions	=	61380
+Static coverage		=	94.1244 %
+Dynamic Coverage	=	57.6931 %
+
+
+[Timing Statistics]
+
+Total Cycles taken		=	237725
+
+Total IPC		=	         0.1535		in terms of micro-ops
+Total IPC		=	         0.1490		in terms of CISC instructions
+
+core		=	0
+Pipeline: outOfOrder
+instructions executed	=	36482
+cycles taken	=	237725 cycles
+IPC		=	         0.1535		in terms of micro-ops
+IPC		=	         0.1490		in terms of CISC instructions
+core frequency	=	3200 MHz
+RAM frequency:800.0 MHz
+Num Channels: 2
+Num Ranks: 2
+Num Banks: 8
+Row Buffer Policy: OpenPage
+Scheduling Policy: RankThenBankRoundRobin
+Queuing Structure: PerRank
+
+[Translator Statistics]
+
+Java thread	=	0
+Data Read	=	134424 bytes
+Number of micro-ops		=	36497
+Number of handled CISC instructions	=	35412
+Number of PIN CISC instructions	=	61380
+Static coverage		=	94.1244 %
+Dynamic Coverage	=	57.6931 %
+
+
+[Timing Statistics]
+
+Total Cycles taken		=	237725
+
+Total IPC		=	         0.1535		in terms of micro-ops
+Total IPC		=	         0.1490		in terms of CISC instructions
+
+core		=	0
+Pipeline: outOfOrder
+instructions executed	=	36482
+cycles taken	=	237725 cycles
+IPC		=	         0.1535		in terms of micro-ops
+IPC		=	         0.1490		in terms of CISC instructions
+core frequency	=	3200 MHz
+time taken	=	        74.2891 microseconds
+
+number of branches	=	15642
+number of mispredicted branches	=	1532
+branch predictor accuracy	=	        90.2059 %
+
+predictor type = TAGE
+PC bits = 8
+BHR size = 16
+Saturating bits = 2
+
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+Nothing executed on core 4
+Nothing executed on core 5
+Nothing executed on core 6
+Nothing executed on core 7
+
+
+[Memory System Statistics]
+
+[Per core statistics]
+
+core		=	0
+Memory Requests	=	20858
+Loads		=	11989
+Stores		=	8869
+LSQ forwardings	=	573
+
+
+iTLB[0] Hits	=	35078
+iTLB[0] Misses	=	333
+iTLB[0] Accesses	=	35411
+iTLB[0] Hit-Rate	=	         0.9906
+iTLB[0] Miss-Rate	=	         0.0094
+
+dTLB[0] Hits	=	20761
+dTLB[0] Misses	=	90
+dTLB[0] Accesses	=	20851
+dTLB[0] Hit-Rate	=	         0.9957
+dTLB[0] Miss-Rate	=	         0.0043time taken	=	        74.2891 microseconds
+
+number of branches	=	15642
+number of mispredicted branches	=	1532
+branch predictor accuracy	=	        90.2059 %
+
+predictor type = TAGE
+PC bits = 8
+BHR size = 16
+Saturating bits = 2
+
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+Nothing executed on core 4
+Nothing executed on core 5
+Nothing executed on core 6
+Nothing executed on core 7
+
+
+[Memory System Statistics]
+
+[Per core statistics]
+
+core		=	0
+Memory Requests	=	20858
+Loads		=	11989
+Stores		=	8869
+LSQ forwardings	=	573
+
+
+iTLB[0] Hits	=	35078
+iTLB[0] Misses	=	333
+iTLB[0] Accesses	=	35411
+iTLB[0] Hit-Rate	=	         0.9906
+iTLB[0] Miss-Rate	=	         0.0094
+
+dTLB[0] Hits	=	20761
+dTLB[0] Misses	=	90
+dTLB[0] Accesses	=	20851
+dTLB[0] Hit-Rate	=	         0.9957
+dTLB[0] Miss-Rate	=	         0.0043
+
+I1[0] Hits	=	32604
+I1[0] Misses	=	2798
+I1[0] Accesses	=	35402
+I1[0] Hit-Rate	=	0.9209649
+I1[0] Miss-Rate	=	0.07903508
+I1[0] AvgNumEventsInMSHR	=	5.9451
+I1[0] AvgNumEventsInMSHREntry	=	3.4963
+
+
+L1[0] Hits	=	13898
+L1[0] Misses	=	1386
+L1[0] Accesses	=	15284
+L1[0] Hit-Rate	=	0.90931696
+L1[0] Miss-Rate	=	0.090683065
+L1[0] AvgNumEventsInMSHR	=	3.4219
+L1[0] AvgNumEventsInMSHREntry	=	1.8307
+
+
+L2[0] Hits	=	3093
+L2[0] Misses	=	1540
+L2[0] Accesses	=	4633
+L2[0] Hit-Rate	=	0.667602
+L2[0] Miss-Rate	=	0.33239803
+L2[0] AvgNumEventsInMSHR	=	3.4641
+L2[0] AvgNumEventsInMSHREntry	=	1.0000
+
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+Nothing executed on core 4
+Nothing executed on core 5
+Nothing executed on core 6
+Nothing executed on core 7
+
+
+[Shared Caches]
+
+
+
+L3[0] Hits	=	480
+L3[0] Misses	=	1292
+L3[0] Accesses	=	1772
+L3[0] Hit-Rate	=	0.27088037
+L3[0] Miss-Rate	=	0.72911966
+L3[0] AvgNumEventsInMSHR	=	2.3713
+L3[0] AvgNumEventsInMSHREntry	=	1.0000
+
+
+[Consolidated Stats For Caches]
+
+
+
+L3 Hits	=	480
+L3 Misses	=	1292
+L3 Accesses	=	1772
+L3 Hit-Rate	=	0.27088037
+L3 Miss-Rate	=	0.72911966
+L3 AvgNumEventsInMSHR	=	2.3713
+L3 AvgNumEventsInMSHREntry	=	1.0000
+
+
+L2 Hits	=	3093
+L2 Misses	=	1540
+L2 Accesses	=	4633
+L2 Hit-Rate	=	0.667602
+L2 Miss-Rate	=	0.33239803
+L2 AvgNumEventsInMSHR	=	3.4641
+L2 AvgNumEventsInMSHREntry	=	1.0000
+
+
+L1 Hits	=	13898
+L1 Misses	=	1386
+L1 Accesses	=	15284
+L1 Hit-Rate	=	0.90931696
+L1 Miss-Rate	=	0.090683065
+L1 AvgNumEventsInMSHR	=	3.4219
+L1 AvgNumEventsInMSHREntry	=	1.8307
+
+
+I1 Hits	=	32604
+I1 Misses	=	2798
+I1 Accesses	=	35402
+I1 Hit-Rate	=	0.9209649
+I1 Miss-Rate	=	0.07903508
+I1 AvgNumEventsInMSHR	=	5.9451
+I1 AvgNumEventsInMSHREntry	=	3.4963
+
+[RAM statistics]
+
+For channel 0:
+Average Read Latency: 64.0 cycles = 20.0 ns
+	 Rank 1
+		 Bank 1 ::  Reads : 53 | Writes: 0
+
+		 Bank 2 ::  Reads : 72 | Writes: 0
+
+		 Bank 3 ::  Reads : 69 | Writes: 0
+
+		 Bank 4 ::  Reads : 174 | Writes: 0
+
+		 Bank 5 ::  Reads : 25 | Writes: 0
+
+		 Bank 6 ::  Reads : 80 | Writes: 0
+
+		 Bank 7 ::  Reads : 50 | Writes: 0
+
+		 Bank 8 ::  Reads : 20 | Writes: 0
+
+	 Total Reads: 543	 Total Writes: 0
+	 Rank 2
+		 Bank 1 ::  Reads : 4 | Writes: 0
+
+		 Bank 2 ::  Reads : 60 | Writes: 0
+
+		 Bank 3 ::  Reads : 116 | Writes: 0
+
+		 Bank 4 ::  Reads : 380 | Writes: 0
+
+		 Bank 5 ::  Reads : 54 | Writes: 0
+
+		 Bank 6 ::  Reads : 5 | Writes: 0
+
+		 Bank 7 ::  Reads : 72 | Writes: 0
+
+		 Bank 8 ::  Reads : 58 | Writes: 0
+
+	 Total Reads: 749	 Total Writes: 0
+
+Total Reads and Writes: 82688 Bytes
+Total Bandwidth: 1.0366155993663897 GB/s
+
+For channel 1:
+Average Read Latency: 65.0 cycles = 20.3125 ns
+	 Rank 1
+		 Bank 1 ::  Reads : 53 | Writes: 0
+
+		 Bank 2 ::  Reads : 72 | Writes: 0
+
+		 Bank 3 ::  Reads : 69 | Writes: 0
+
+		 Bank 4 ::  Reads : 174 | Writes: 0
+
+		 Bank 5 ::  Reads : 25 | Writes: 0
+
+		 Bank 6 ::  Reads : 80 | Writes: 0
+
+		 Bank 7 ::  Reads : 50 | Writes: 0
+
+		 Bank 8 ::  Reads : 20 | Writes: 0
+
+	 Total Reads: 543	 Total Writes: 0
+	 Rank 2
+		 Bank 1 ::  Reads : 4 | Writes: 0
+
+		 Bank 2 ::  Reads : 60 | Writes: 0
+
+		 Bank 3 ::  Reads : 116 | Writes: 0
+
+		 Bank 4 ::  Reads : 380 | Writes: 0
+
+		 Bank 5 ::  Reads : 54 | Writes: 0
+
+		 Bank 6 ::  Reads : 5 | Writes: 0
+
+		 Bank 7 ::  Reads : 72 | Writes: 0
+
+		 Bank 8 ::  Reads : 58 | Writes: 0
+
+	 Total Reads: 749	 Total Writes: 0
+
+Total Reads and Writes: 82688 Bytes
+Total Bandwidth: 1.0366155993663897 GB/s
+
+
+
+
+Directory Access due to ReadMiss	=	210
+Directory Access due to WriteMiss	=	406
+Directory Access due to WriteHit	=	27
+Directory Access due to EvictionFromCoherentCache	=	114
+Directory Access due to EvictionFromSharedCache	=	0
+Directory Hits	=	141
+Directory Misses	=	616
+Directory Hit-Rate	=	         0.1863
+Directory Miss-Rate	=	         0.8137
+
+[Simulator Time]
+Time Taken		=	60 : 19 minutes
+Instructions per Second	=	         0.0101 KIPS		in terms of micro-ops
+Instructions per Second	=	         0.0098 KIPS		in terms of CISC instructions
+
+
+
+[ LeakageEnergy   DynamicEnergy   TotalEnergy   NumDynamicAcc  ComponentName] : 
+
+
+     25959.5700	     12254.9860	     38214.5560	          36082	core[0].iCache
+      1298.6322	      2428.0374	      3726.6696	          35744	core[0].iTLB
+     25959.5700	      5399.9784	     31359.5484	          15899	core[0].dCache
+      1298.6322	      1422.4913	      2721.1236	          20941	core[0].dTLB
+      4231.5050	      3009.5208	      7241.0258	          31284	core[0].pipeline.bPred
+     14215.9550	      1266.6888	     15482.6438	          36504	core[0].pipeline.decode
+      1069.7625	       312.8250	      1382.5875	          20855	core[0].pipeline.rename.Int.RAT
+       380.3600	       203.7025	       584.0625	          23965	core[0].pipeline.rename.Int.FreeList
+      1450.1225	       516.5275	      1966.6500	              0	core[0].pipeline.rename.Int
+
+
+I1[0] Hits	=	32604
+I1[0] Misses	=	2798
+I1[0] Accesses	=	35402
+I1[0] Hit-Rate	=	0.9209649
+I1[0] Miss-Rate	=	0.07903508
+I1[0] AvgNumEventsInMSHR	=	5.9451
+I1[0] AvgNumEventsInMSHREntry	=	3.4963
+
+
+L1[0] Hits	=	13898
+L1[0] Misses	=	1386
+L1[0] Accesses	=	15284
+L1[0] Hit-Rate	=	0.90931696
+L1[0] Miss-Rate	=	0.090683065
+L1[0] AvgNumEventsInMSHR	=	3.4219
+L1[0] AvgNumEventsInMSHREntry	=	1.8307
+
+
+L2[0] Hits	=	3093
+L2[0] Misses	=	1540
+L2[0] Accesses	=	4633
+L2[0] Hit-Rate	=	0.667602
+L2[0] Miss-Rate	=	0.33239803
+L2[0] AvgNumEventsInMSHR	=	3.4641
+L2[0] AvgNumEventsInMSHREntry	=	1.0000
+
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+Nothing executed on core 4
+Nothing executed on core 5
+Nothing executed on core 6
+Nothing executed on core 7
+
+
+[Shared Caches]
+
+       404.1325	         0.0000	       404.1325	              0	core[0].pipeline.rename.Float.RAT
+       713.1750	         0.0000	       713.1750	              0	core[0].pipeline.rename.Float.FreeList
+      1117.3075	         0.0000	      1117.3075	              0	core[0].pipeline.rename.Float
+      2567.4300	       516.5275	      3083.9575	              0	core[0].pipeline.rename
+      7559.6550	      3598.0050	     11157.6600	          20858	core[0].pipeline.LSQ
+      2567.4300	      1877.9904	      4445.4204	          32832	core[0].pipeline.intRegFile
+      1782.9375	         0.0000	      1782.9375	              0	core[0].pipeline.floatRegFile
+      1093.5350	      1036.5432	      2130.0782	          72996	core[0].pipeline.InstrWindow
+      1378.8050	      3058.5136	      4437.3186	         100609	core[0].pipeline.ROB
+     12884.6950	         0.0000	     12884.6950	              0	core[0].pipeline.FuncUnit.intALU
+     15547.2150	         0.0000	     15547.2150	              0	core[0].pipeline.FuncUnit.floatALU
+      6442.3475	     23773.4944	     30215.8419	          36496	core[0].pipeline.FuncUnit.complexALU
+      5681.6275	      7125.1092	     12806.7367	          11979	core[0].pipeline.resultsBroadcastBus
+     75953.1375	     45262.3929	    121215.5304	              0	core[0].pipeline.total
+    130469.5420	     66767.8860	    197237.4280	              0	core[0].total
+
+
+    130469.5420	     66767.8860	    197237.4280	              0	coreEnergy.total
+
+
+     44977.5700	      1867.9451	     46845.5151	           3064	L3[0]
+
+
+     44977.5700	      1867.9451	     46845.5151	              0	sharedCacheEnergy.total
+
+
+
+
+L3[0] Hits	=	480
+L3[0] Misses	=	1292
+L3[0] Accesses	=	1772
+L3[0] Hit-Rate	=	0.27088037
+L3[0] Miss-Rate	=	0.72911966
+L3[0] AvgNumEventsInMSHR	=	2.3713
+L3[0] AvgNumEventsInMSHREntry	=	1.0000
+
+
+[Consolidated Stats For Caches]
+
+
+
+L3 Hits	=	480
+L3 Misses	=	1292
+L3 Accesses	=	1772
+L3 Hit-Rate	=	0.27088037
+L3 Miss-Rate	=	0.72911966
+L3 AvgNumEventsInMSHR	=	2.3713
+L3 AvgNumEventsInMSHREntry	=	1.0000
+
+
+L2 Hits	=	3093
+L2 Misses	=	1540
+L2 Accesses	=	4633
+L2 Hit-Rate	=	0.667602
+L2 Miss-Rate	=	0.33239803
+L2 AvgNumEventsInMSHR	=	3.4641
+L2 AvgNumEventsInMSHREntry	=	1.0000
+
+
+L1 Hits	=	13898
+L1 Misses	=	1386
+L1 Accesses	=	15284
+L1 Hit-Rate	=	0.90931696
+L1 Miss-Rate	=	0.090683065
+L1 AvgNumEventsInMSHR	=	3.4219
+L1 AvgNumEventsInMSHREntry	=	1.8307
+
+
+I1 Hits	=	32604
+I1 Misses	=	2798
+I1 Accesses	=	35402
+I1 Hit-Rate	=	0.9209649
+I1 Miss-Rate	=	0.07903508
+I1 AvgNumEventsInMSHR	=	5.9451
+I1 AvgNumEventsInMSHREntry	=	3.4963
+
+[RAM statistics]
+
+For channel 0:
+Average Read Latency: 64.0 cycles = 20.0 ns
+	 Rank 1
+		 Bank 1 ::  Reads : 53 | Writes: 0
+
+		 Bank 2 ::  Reads : 72 | Writes: 0
+
+		 Bank 3 ::  Reads : 69 | Writes: 0
+
+		 Bank 4 ::  Reads : 174 | Writes: 0
+
+		 Bank 5 ::  Reads : 25 | Writes: 0
+
+		 Bank 6 ::  Reads : 80 | Writes: 0
+
+		 Bank 7 ::  Reads : 50 | Writes: 0
+
+		 Bank 8 ::  Reads : 20 | Writes: 0
+
+	 Total Reads: 543	 Total Writes: 0
+	 Rank 2
+		 Bank 1 ::  Reads : 4 | Writes: 0
+
+		 Bank 2 ::  Reads : 60 | Writes: 0
+
+		 Bank 3 ::  Reads : 116 | Writes: 0
+
+		 Bank 4 ::  Reads : 380 | Writes: 0
+
+		 Bank 5 ::  Reads : 54 | Writes: 0
+
+		 Bank 6 ::  Reads : 5 | Writes: 0
+
+		 Bank 7 ::  Reads : 72 | Writes: 0
+
+		 Bank 8 ::  Reads : 58 | Writes: 0
+
+	 Total Reads: 749	 Total Writes: 0
+
+Total Reads and Writes: 82688 Bytes
+Total Bandwidth: 1.0366155993663897 GB/s
+
+For channel 1:
+Average Read Latency: 65.0 cycles = 20.3125 ns
+	 Rank 1
+		 Bank 1 ::  Reads : 53 | Writes: 0
+
+		 Bank 2 ::  Reads : 72 | Writes: 0
+
+		 Bank 3 ::  Reads : 69 | Writes: 0
+
+		 Bank 4 ::  Reads : 174 | Writes: 0
+
+		 Bank 5 ::  Reads : 25 | Writes: 0
+
+		 Bank 6 ::  Reads : 80 | Writes: 0
+
+		 Bank 7 ::  Reads : 50 | Writes: 0
+
+		 Bank 8 ::  Reads : 20 | Writes: 0
+
+	 Total Reads: 543	 Total Writes: 0
+	 Rank 2
+		 Bank 1 ::  Reads : 4 | Writes: 0
+
+		 Bank 2 ::  Reads : 60 | Writes: 0
+
+		 Bank 3 ::  Reads : 116 | Writes: 0
+
+		 Bank 4 ::  Reads : 380 | Writes: 0
+
+		 Bank 5 ::  Reads : 54 | Writes: 0
+
+		 Bank 6 ::  Reads : 5 | Writes: 0
+
+		 Bank 7 ::  Reads : 72 | Writes: 0
+
+		 Bank 8 ::  Reads : 58 | Writes: 0
+
+	 Total Reads: 749	 Total Writes: 0
+
+Total Reads and Writes: 82688 Bytes
+Total Bandwidth: 1.0366155993663897 GB/s
+
+
+
+
+Directory Access due to ReadMiss	=	210
+Directory Access due to WriteMiss	=	406
+Directory Access due to WriteHit	=	27
+Directory Access due to EvictionFromCoherentCache	=	114
+Directory Access due to EvictionFromSharedCache	=	0
+Directory Hits	=	141
+Directory Misses	=	616
+Directory Hit-Rate	=	         0.1863
+Directory Miss-Rate	=	         0.8137
+
+[Simulator Time]
+Time Taken		=	60 : 19 minutes
+Instructions per Second	=	         0.0101 KIPS		in terms of micro-ops
+Instructions per Second	=	         0.0098 KIPS		in terms of CISC instructions
+
+
+
+[ LeakageEnergy   DynamicEnergy   TotalEnergy   NumDynamicAcc  ComponentName] : 
+
+
+     25959.5700	     12254.9860	     38214.5560	          36082	core[0].iCache
+      1298.6322	      2428.0374	      3726.6696	          35744	core[0].iTLB
+     25959.5700	      5399.9784	     31359.5484	          15899	core[0].dCache
+      1298.6322	      1422.4913	      2721.1236	          20941	core[0].dTLB
+      4231.5050	      3009.5208	      7241.0258	          31284	core[0].pipeline.bPred
+     14215.9550	      1266.6888	     15482.6438	          36504	core[0].pipeline.decode
+      1069.7625	       312.8250	      1382.5875	          20855	core[0].pipeline.rename.Int.RAT
+       380.3600	       203.7025	       584.0625	          23965	core[0].pipeline.rename.Int.FreeList
+      1450.1225	       516.5275	      1966.6500	              0	core[0].pipeline.rename.Int
+       404.1325	         0.0000	       404.1325	              0	core[0].pipeline.rename.Float.RAT
+       713.1750	         0.0000	       713.1750	              0	core[0].pipeline.rename.Float.FreeList
+      1117.3075	         0.0000	      1117.3075	              0	core[0].pipeline.rename.Float
+      2567.4300	       516.5275	      3083.9575	              0	core[0].pipeline.rename
+      7559.6550	      3598.0050	     11157.6600	          20858	core[0].pipeline.LSQ
+      2567.4300	      1877.9904	      4445.4204	          32832	core[0].pipeline.intRegFile
+      1782.9375	         0.0000	      1782.9375	              0	core[0].pipeline.floatRegFile
+      1093.5350	      1036.5432	      2130.0782	          72996	core[0].pipeline.InstrWindow
+      1378.8050	      3058.5136	      4437.3186	         100609	core[0].pipeline.ROB
+     12884.6950	         0.0000	     12884.6950	              0	core[0].pipeline.FuncUnit.intALU
+     15547.2150	         0.0000	     15547.2150	              0	core[0].pipeline.FuncUnit.floatALU
+      6442.3475	     23773.4944	     30215.8419	          36496	core[0].pipeline.FuncUnit.complexALU
+      5681.6275	      7125.1092	     12806.7367	          11979	core[0].pipeline.resultsBroadcastBus
+     75953.1375	     45262.3929	    121215.5304	              0	core[0].pipeline.total
+    130469.5420	     66767.8860	    197237.4280	              0	core[0].total
+
+
+    130469.5420	     66767.8860	    197237.4280	              0	coreEnergy.total
+
+
+     44977.5700	      1867.9451	     46845.5151	           3064	L3[0]
+
+
+     44977.5700	      1867.9451	     46845.5151	              0	sharedCacheEnergy.total
+
+
+      1735.3925	         0.0000	      1735.3925	              0	MainMemoryDRAMController[0]
+      1735.3925	         0.0000	      1735.3925	              0	MainMemoryDRAMController[1]
+
+      3470.7850	         0.0000	      3470.7850	              0	mainMemoryControllerEnergy.total
+     25959.5700	       257.0772	     26216.6472	            757	Coherence[0]
+
+
+     25959.5700	       257.0772	     26216.6472	              0	coherenceEnergy.total
+
+
+    204877.4670	     68892.9083	    273770.3753	              0	TotalEnergy

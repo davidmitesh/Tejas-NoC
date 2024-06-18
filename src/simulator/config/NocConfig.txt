@@ -1,0 +1,7 @@
+3 6
+2
+0 2 0 2
+0 2 3 5
+M	D1	L2  C   C   C
+C	C	C	C   C   C
+C	C	C   L2  D1  M

@@ -1,0 +1,635 @@
+
+
+
+creating instruction pool..
+The executable has 19304 assembly lines
+Total number of assembly lines = 19289
+Total number of micro-operations = 23641
+Newmain : pid = 136335
+coremap 2
+subset sim size = 200000000	true
+marker functions = false	 start marker = 	 end marker = 
+command is : /home/mitesh/Documents/pin-3.21/pin -injection child  -t /home/mitesh/Documents/Tejas/src/emulator/pin/obj-pin/causalityTool.so -maxNumActiveThreads 8 -map 1 -numIgn 0 -numSim 200000000 -id 136335 -traceMethod sharedMemory --    /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.miteshTest-m64 /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/531.deepsjeng_r/data/refrate/input/ref.txt
+Pid of the instrumented process is 136355
+55fe3faf5000-55fe3faf6000 r--p 00000000 08:12 11831281                   /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/531.deepsjeng_r/exe/deepsjeng_r_base.miteshTest-m64
+Found start of address in procmaps 94550478508032
+[stdin] numIgn = 0
+--  starting java thread0
+num of threads on core 0 = 1
+[stdin] numSim = 200000000
+[stdin] id received = 136335
+[stdin] pinpoints file received = nofile
+[stdin] maxNumActiveThreads = 8
+[stdin] start marker = 
+[stdin] end marker = 
+[stdin] outOfROIPhase = 0
+[stdin] threads till now 1
+[stdin] LOCK instrumentation for pthread_mutex_lock
+[stdin] UNLOCK instrumentation for pthread_mutex_unlock
+[stdin] Deep Sjeng version 3.2 SPEC, Copyright (C) 2000-2009 Gian-Carlo Pascutto
+[stdin] Allocated 15000000 hash entries, totalling 720000000 bytes.
+[stdin] numCISC on thread 0 = 1000000 ignoreActive = 0
+1 million done on 0
+[stdin] totalNumCISC = 1000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 2000000 ignoreActive = 0
+2 million done on 0
+Reset Statistics for Cache warmup after 2000000 instructions on Core 0
+[stdin] totalNumCISC = 2000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 3000000 ignoreActive = 0
+1 million done on 0
+[stdin] totalNumCISC = 3000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 4000000 ignoreActive = 0
+2 million done on 0
+[stdin] totalNumCISC = 4000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 5000000 ignoreActive = 0
+3 million done on 0
+[stdin] totalNumCISC = 5000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 6000000 ignoreActive = 0
+4 million done on 0
+[stdin] totalNumCISC = 6000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 7000000 ignoreActive = 0
+5 million done on 0
+[stdin] totalNumCISC = 7000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 8000000 ignoreActive = 0
+6 million done on 0
+[stdin] totalNumCISC = 8000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 9000000 ignoreActive = 0
+7 million done on 0
+[stdin] totalNumCISC = 9000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 10000000 ignoreActive = 0
+8 million done on 0
+[stdin] totalNumCISC = 10000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 11000000 ignoreActive = 0
+9 million done on 0
+[stdin] totalNumCISC = 11000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 12000000 ignoreActive = 0
+10 million done on 0
+[stdin] totalNumCISC = 12000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 13000000 ignoreActive = 0
+11 million done on 0
+[stdin] totalNumCISC = 13000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 14000000 ignoreActive = 0
+12 million done on 0
+[stdin] totalNumCISC = 14000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 15000000 ignoreActive = 0
+13 million done on 0
+[stdin] totalNumCISC = 15000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 16000000 ignoreActive = 0
+14 million done on 0
+[stdin] totalNumCISC = 16000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 17000000 ignoreActive = 0
+15 million done on 0
+[stdin] totalNumCISC = 17000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 18000000 ignoreActive = 0
+16 million done on 0
+[stdin] totalNumCISC = 18000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 19000000 ignoreActive = 0
+17 million done on 0
+[stdin] totalNumCISC = 19000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 20000000 ignoreActive = 0
+18 million done on 0
+[stdin] totalNumCISC = 20000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 21000000 ignoreActive = 0
+19 million done on 0
+[stdin] totalNumCISC = 21000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 22000000 ignoreActive = 0
+20 million done on 0
+[stdin] totalNumCISC = 22000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 23000000 ignoreActive = 0
+21 million done on 0
+[stdin] totalNumCISC = 23000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 24000000 ignoreActive = 0
+22 million done on 0
+[stdin] totalNumCISC = 24000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 25000000 ignoreActive = 0
+23 million done on 0
+[stdin] totalNumCISC = 25000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 26000000 ignoreActive = 0
+24 million done on 0
+[stdin] totalNumCISC = 26000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 27000000 ignoreActive = 0
+25 million done on 0
+[stdin] totalNumCISC = 27000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 28000000 ignoreActive = 0
+26 million done on 0
+[stdin] totalNumCISC = 28000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 29000000 ignoreActive = 0
+27 million done on 0
+[stdin] totalNumCISC = 29000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 30000000 ignoreActive = 0
+28 million done on 0
+[stdin] totalNumCISC = 30000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 31000000 ignoreActive = 0
+29 million done on 0
+[stdin] totalNumCISC = 31000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 32000000 ignoreActive = 0
+30 million done on 0
+[stdin] totalNumCISC = 32000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 33000000 ignoreActive = 0
+31 million done on 0
+[stdin] totalNumCISC = 33000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 34000000 ignoreActive = 0
+32 million done on 0
+[stdin] totalNumCISC = 34000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 35000000 ignoreActive = 0
+33 million done on 0
+[stdin] totalNumCISC = 35000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 36000000 ignoreActive = 0
+34 million done on 0
+[stdin] totalNumCISC = 36000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 37000000 ignoreActive = 0
+35 million done on 0
+[stdin] totalNumCISC = 37000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 38000000 ignoreActive = 0
+36 million done on 0
+[stdin] totalNumCISC = 38000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 39000000 ignoreActive = 0
+37 million done on 0
+[stdin] totalNumCISC = 39000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 40000000 ignoreActive = 0
+38 million done on 0
+[stdin] totalNumCISC = 40000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 41000000 ignoreActive = 0
+39 million done on 0
+[stdin] totalNumCISC = 41000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 42000000 ignoreActive = 0
+40 million done on 0
+[stdin] totalNumCISC = 42000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 43000000 ignoreActive = 0
+41 million done on 0
+[stdin] totalNumCISC = 43000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 44000000 ignoreActive = 0
+42 million done on 0
+[stdin] totalNumCISC = 44000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 45000000 ignoreActive = 0
+43 million done on 0
+[stdin] totalNumCISC = 45000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 46000000 ignoreActive = 0
+44 million done on 0
+[stdin] totalNumCISC = 46000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 47000000 ignoreActive = 0
+45 million done on 0
+[stdin] totalNumCISC = 47000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 48000000 ignoreActive = 0
+46 million done on 0
+[stdin] totalNumCISC = 48000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 49000000 ignoreActive = 0
+47 million done on 0
+[stdin] totalNumCISC = 49000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 50000000 ignoreActive = 0
+48 million done on 0
+[stdin] totalNumCISC = 50000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 51000000 ignoreActive = 0
+49 million done on 0
+[stdin] totalNumCISC = 51000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 52000000 ignoreActive = 0
+50 million done on 0
+[stdin] totalNumCISC = 52000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 53000000 ignoreActive = 0
+51 million done on 0
+[stdin] totalNumCISC = 53000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 54000000 ignoreActive = 0
+52 million done on 0
+[stdin] totalNumCISC = 54000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 55000000 ignoreActive = 0
+53 million done on 0
+[stdin] totalNumCISC = 55000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 56000000 ignoreActive = 0
+54 million done on 0
+[stdin] totalNumCISC = 56000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 57000000 ignoreActive = 0
+55 million done on 0
+[stdin] totalNumCISC = 57000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 58000000 ignoreActive = 0
+56 million done on 0
+[stdin] totalNumCISC = 58000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 59000000 ignoreActive = 0
+57 million done on 0
+[stdin] totalNumCISC = 59000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 60000000 ignoreActive = 0
+58 million done on 0
+[stdin] totalNumCISC = 60000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 61000000 ignoreActive = 0
+59 million done on 0
+[stdin] totalNumCISC = 61000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 62000000 ignoreActive = 0
+60 million done on 0
+[stdin] totalNumCISC = 62000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 63000000 ignoreActive = 0
+61 million done on 0
+[stdin] totalNumCISC = 63000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 64000000 ignoreActive = 0
+62 million done on 0
+[stdin] totalNumCISC = 64000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 65000000 ignoreActive = 0
+63 million done on 0
+[stdin] totalNumCISC = 65000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 66000000 ignoreActive = 0
+64 million done on 0
+[stdin] totalNumCISC = 66000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 67000000 ignoreActive = 0
+65 million done on 0
+[stdin] totalNumCISC = 67000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 68000000 ignoreActive = 0
+66 million done on 0
+[stdin] totalNumCISC = 68000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 69000000 ignoreActive = 0
+67 million done on 0
+[stdin] totalNumCISC = 69000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 70000000 ignoreActive = 0
+68 million done on 0
+[stdin] totalNumCISC = 70000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 71000000 ignoreActive = 0
+69 million done on 0
+[stdin] totalNumCISC = 71000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 72000000 ignoreActive = 0
+70 million done on 0
+[stdin] totalNumCISC = 72000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 73000000 ignoreActive = 0
+71 million done on 0
+[stdin] totalNumCISC = 73000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 74000000 ignoreActive = 0
+72 million done on 0
+[stdin] totalNumCISC = 74000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 75000000 ignoreActive = 0
+73 million done on 0
+[stdin] totalNumCISC = 75000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 76000000 ignoreActive = 0
+74 million done on 0
+[stdin] totalNumCISC = 76000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 77000000 ignoreActive = 0
+75 million done on 0
+[stdin] totalNumCISC = 77000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 78000000 ignoreActive = 0
+76 million done on 0
+[stdin] totalNumCISC = 78000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 79000000 ignoreActive = 0
+77 million done on 0
+[stdin] totalNumCISC = 79000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 80000000 ignoreActive = 0
+78 million done on 0
+[stdin] totalNumCISC = 80000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 81000000 ignoreActive = 0
+79 million done on 0
+[stdin] totalNumCISC = 81000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 82000000 ignoreActive = 0
+80 million done on 0
+[stdin] totalNumCISC = 82000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 83000000 ignoreActive = 0
+81 million done on 0
+[stdin] totalNumCISC = 83000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 84000000 ignoreActive = 0
+82 million done on 0
+[stdin] totalNumCISC = 84000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 85000000 ignoreActive = 0
+83 million done on 0
+[stdin] totalNumCISC = 85000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 86000000 ignoreActive = 0
+84 million done on 0
+[stdin] totalNumCISC = 86000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 87000000 ignoreActive = 0
+85 million done on 0
+[stdin] totalNumCISC = 87000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 88000000 ignoreActive = 0
+86 million done on 0
+[stdin] totalNumCISC = 88000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 89000000 ignoreActive = 0
+87 million done on 0
+[stdin] totalNumCISC = 89000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 90000000 ignoreActive = 0
+88 million done on 0
+[stdin] totalNumCISC = 90000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 91000000 ignoreActive = 0
+89 million done on 0
+[stdin] totalNumCISC = 91000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 92000000 ignoreActive = 0
+90 million done on 0
+[stdin] totalNumCISC = 92000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 93000000 ignoreActive = 0
+91 million done on 0
+[stdin] totalNumCISC = 93000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 94000000 ignoreActive = 0
+92 million done on 0
+[stdin] totalNumCISC = 94000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 95000000 ignoreActive = 0
+93 million done on 0
+[stdin] totalNumCISC = 95000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 96000000 ignoreActive = 0
+94 million done on 0
+[stdin] totalNumCISC = 96000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 97000000 ignoreActive = 0
+95 million done on 0
+[stdin] totalNumCISC = 97000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 98000000 ignoreActive = 0
+96 million done on 0
+[stdin] totalNumCISC = 98000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 99000000 ignoreActive = 0
+97 million done on 0
+[stdin] totalNumCISC = 99000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 100000000 ignoreActive = 0
+98 million done on 0
+[stdin] totalNumCISC = 100000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 101000000 ignoreActive = 0
+99 million done on 0
+[stdin] totalNumCISC = 101000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 102000000 ignoreActive = 0
+100 million done on 0
+[stdin] totalNumCISC = 102000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 103000000 ignoreActive = 0
+101 million done on 0
+[stdin] totalNumCISC = 103000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 104000000 ignoreActive = 0
+102 million done on 0
+[stdin] totalNumCISC = 104000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 105000000 ignoreActive = 0
+103 million done on 0
+[stdin] totalNumCISC = 105000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 106000000 ignoreActive = 0
+104 million done on 0
+[stdin] totalNumCISC = 106000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 107000000 ignoreActive = 0
+105 million done on 0
+[stdin] totalNumCISC = 107000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 108000000 ignoreActive = 0
+106 million done on 0
+[stdin] totalNumCISC = 108000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 109000000 ignoreActive = 0
+107 million done on 0
+[stdin] totalNumCISC = 109000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 110000000 ignoreActive = 0
+108 million done on 0
+[stdin] totalNumCISC = 110000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 111000000 ignoreActive = 0
+109 million done on 0
+[stdin] totalNumCISC = 111000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 112000000 ignoreActive = 0
+110 million done on 0
+[stdin] totalNumCISC = 112000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 113000000 ignoreActive = 0
+111 million done on 0
+[stdin] totalNumCISC = 113000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 114000000 ignoreActive = 0
+112 million done on 0
+[stdin] totalNumCISC = 114000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 115000000 ignoreActive = 0
+113 million done on 0
+[stdin] totalNumCISC = 115000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 116000000 ignoreActive = 0
+114 million done on 0
+[stdin] totalNumCISC = 116000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 117000000 ignoreActive = 0
+115 million done on 0
+[stdin] totalNumCISC = 117000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 118000000 ignoreActive = 0
+116 million done on 0
+[stdin] totalNumCISC = 118000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 119000000 ignoreActive = 0
+117 million done on 0
+[stdin] totalNumCISC = 119000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 120000000 ignoreActive = 0
+118 million done on 0
+[stdin] totalNumCISC = 120000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 121000000 ignoreActive = 0
+119 million done on 0
+[stdin] totalNumCISC = 121000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 122000000 ignoreActive = 0
+120 million done on 0
+[stdin] totalNumCISC = 122000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 123000000 ignoreActive = 0
+121 million done on 0
+[stdin] totalNumCISC = 123000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 124000000 ignoreActive = 0
+122 million done on 0
+[stdin] totalNumCISC = 124000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 125000000 ignoreActive = 0
+123 million done on 0
+[stdin] totalNumCISC = 125000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 126000000 ignoreActive = 0
+124 million done on 0
+[stdin] totalNumCISC = 126000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 127000000 ignoreActive = 0
+125 million done on 0
+[stdin] totalNumCISC = 127000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 128000000 ignoreActive = 0
+126 million done on 0
+[stdin] totalNumCISC = 128000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 129000000 ignoreActive = 0
+127 million done on 0
+[stdin] totalNumCISC = 129000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 130000000 ignoreActive = 0
+128 million done on 0
+[stdin] totalNumCISC = 130000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 131000000 ignoreActive = 0
+129 million done on 0
+[stdin] totalNumCISC = 131000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 132000000 ignoreActive = 0
+130 million done on 0
+[stdin] totalNumCISC = 132000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 133000000 ignoreActive = 0
+131 million done on 0
+[stdin] totalNumCISC = 133000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 134000000 ignoreActive = 0
+132 million done on 0
+[stdin] totalNumCISC = 134000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 135000000 ignoreActive = 0
+133 million done on 0
+[stdin] totalNumCISC = 135000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 136000000 ignoreActive = 0
+134 million done on 0
+[stdin] totalNumCISC = 136000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 137000000 ignoreActive = 0
+135 million done on 0
+[stdin] totalNumCISC = 137000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 138000000 ignoreActive = 0
+136 million done on 0
+[stdin] totalNumCISC = 138000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 139000000 ignoreActive = 0
+137 million done on 0
+[stdin] totalNumCISC = 139000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 140000000 ignoreActive = 0
+138 million done on 0
+[stdin] totalNumCISC = 140000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 141000000 ignoreActive = 0
+139 million done on 0
+[stdin] totalNumCISC = 141000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 142000000 ignoreActive = 0
+140 million done on 0
+[stdin] totalNumCISC = 142000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 143000000 ignoreActive = 0
+141 million done on 0
+[stdin] totalNumCISC = 143000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 144000000 ignoreActive = 0
+142 million done on 0
+[stdin] totalNumCISC = 144000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 145000000 ignoreActive = 0
+143 million done on 0
+[stdin] totalNumCISC = 145000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 146000000 ignoreActive = 0
+144 million done on 0
+[stdin] totalNumCISC = 146000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 147000000 ignoreActive = 0
+145 million done on 0
+[stdin] totalNumCISC = 147000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 148000000 ignoreActive = 0
+146 million done on 0
+[stdin] totalNumCISC = 148000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 149000000 ignoreActive = 0
+147 million done on 0
+[stdin] totalNumCISC = 149000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 150000000 ignoreActive = 0
+148 million done on 0
+[stdin] totalNumCISC = 150000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 151000000 ignoreActive = 0
+149 million done on 0
+[stdin] totalNumCISC = 151000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 152000000 ignoreActive = 0
+150 million done on 0
+[stdin] totalNumCISC = 152000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 153000000 ignoreActive = 0
+151 million done on 0
+[stdin] totalNumCISC = 153000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 154000000 ignoreActive = 0
+152 million done on 0
+[stdin] totalNumCISC = 154000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 155000000 ignoreActive = 0
+153 million done on 0
+[stdin] totalNumCISC = 155000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 156000000 ignoreActive = 0
+154 million done on 0
+[stdin] totalNumCISC = 156000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 157000000 ignoreActive = 0
+155 million done on 0
+[stdin] totalNumCISC = 157000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 158000000 ignoreActive = 0
+156 million done on 0
+[stdin] totalNumCISC = 158000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 159000000 ignoreActive = 0
+157 million done on 0
+[stdin] totalNumCISC = 159000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 160000000 ignoreActive = 0
+158 million done on 0
+[stdin] totalNumCISC = 160000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 161000000 ignoreActive = 0
+159 million done on 0
+[stdin] totalNumCISC = 161000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 162000000 ignoreActive = 0
+160 million done on 0
+[stdin] totalNumCISC = 162000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 163000000 ignoreActive = 0
+161 million done on 0
+[stdin] totalNumCISC = 163000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 164000000 ignoreActive = 0
+162 million done on 0
+[stdin] totalNumCISC = 164000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 165000000 ignoreActive = 0
+163 million done on 0
+[stdin] totalNumCISC = 165000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 166000000 ignoreActive = 0
+164 million done on 0
+[stdin] totalNumCISC = 166000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 167000000 ignoreActive = 0
+165 million done on 0
+[stdin] totalNumCISC = 167000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 168000000 ignoreActive = 0
+166 million done on 0
+[stdin] totalNumCISC = 168000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 169000000 ignoreActive = 0
+167 million done on 0
+[stdin] totalNumCISC = 169000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 170000000 ignoreActive = 0
+168 million done on 0
+[stdin] totalNumCISC = 170000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 171000000 ignoreActive = 0
+169 million done on 0
+[stdin] totalNumCISC = 171000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 172000000 ignoreActive = 0
+170 million done on 0
+[stdin] totalNumCISC = 172000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 173000000 ignoreActive = 0
+171 million done on 0
+[stdin] totalNumCISC = 173000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 174000000 ignoreActive = 0
+172 million done on 0
+[stdin] totalNumCISC = 174000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 175000000 ignoreActive = 0
+173 million done on 0
+[stdin] totalNumCISC = 175000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 176000000 ignoreActive = 0
+174 million done on 0
+[stdin] totalNumCISC = 176000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 177000000 ignoreActive = 0
+175 million done on 0
+[stdin] totalNumCISC = 177000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 178000000 ignoreActive = 0
+176 million done on 0
+[stdin] totalNumCISC = 178000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 179000000 ignoreActive = 0
+177 million done on 0
+[stdin] totalNumCISC = 179000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 180000000 ignoreActive = 0
+178 million done on 0
+[stdin] totalNumCISC = 180000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 181000000 ignoreActive = 0
+179 million done on 0
+[stdin] totalNumCISC = 181000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 182000000 ignoreActive = 0
+180 million done on 0
+[stdin] totalNumCISC = 182000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 183000000 ignoreActive = 0
+181 million done on 0
+[stdin] totalNumCISC = 183000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 184000000 ignoreActive = 0
+182 million done on 0
+[stdin] totalNumCISC = 184000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 185000000 ignoreActive = 0
+183 million done on 0
+[stdin] totalNumCISC = 185000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 186000000 ignoreActive = 0
+184 million done on 0
+[stdin] totalNumCISC = 186000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 187000000 ignoreActive = 0
+185 million done on 0
+[stdin] totalNumCISC = 187000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 188000000 ignoreActive = 0
+186 million done on 0
+[stdin] totalNumCISC = 188000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 189000000 ignoreActive = 0
+187 million done on 0
+[stdin] totalNumCISC = 189000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 190000000 ignoreActive = 0
+188 million done on 0
+[stdin] totalNumCISC = 190000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 191000000 ignoreActive = 0
+189 million done on 0
+[stdin] totalNumCISC = 191000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 192000000 ignoreActive = 0
+190 million done on 0
+[stdin] totalNumCISC = 192000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 193000000 ignoreActive = 0
+191 million done on 0
+[stdin] totalNumCISC = 193000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 194000000 ignoreActive = 0
+192 million done on 0
+[stdin] totalNumCISC = 194000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 195000000 ignoreActive = 0
+193 million done on 0
+[stdin] totalNumCISC = 195000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 196000000 ignoreActive = 0
+194 million done on 0
+[stdin] totalNumCISC = 196000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 197000000 ignoreActive = 0
+195 million done on 0
+[stdin] totalNumCISC = 197000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 198000000 ignoreActive = 0
+196 million done on 0
+[stdin] totalNumCISC = 198000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 199000000 ignoreActive = 0
+197 million done on 0
+within SUBSETSIMCOMPLETE 
+Completed execution for the stream gobbler of stdin stream!!
+Completed execution for the stream gobbler of stderr stream!!
+killing emulator process
+
+
+Simulation completed !!
+killing emulator process

@@ -1,0 +1,86 @@
+
+
+
+creating instruction pool..
+The executable has 4801 assembly lines
+Total number of assembly lines = 4786
+Total number of micro-operations = 5713
+Newmain : pid = 133847
+coremap 2
+subset sim size = 20000000	true
+marker functions = false	 start marker = 	 end marker = 
+command is : /home/mitesh/Documents/pin-3.21/pin -injection child  -t /home/mitesh/Documents/Tejas/src/emulator/pin/obj-pin/causalityTool.so -maxNumActiveThreads 8 -map 1 -numIgn 0 -numSim 20000000 -id 133847 -traceMethod sharedMemory --    /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.miteshTest-m64 /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/505.mcf_r/data/refrate/input/inp.in
+Pid of the instrumented process is 133867
+5588bb91e000-5588bb91f000 r--p 00000000 08:12 11831280                   /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.miteshTest-m64
+Found start of address in procmaps 94045750812672
+[stdin] numIgn = 0
+--  starting java thread0
+num of threads on core 0 = 1
+[stdin] numSim = 20000000
+[stdin] id received = 133847
+[stdin] pinpoints file received = nofile
+[stdin] maxNumActiveThreads = 8
+[stdin] start marker = 
+[stdin] end marker = 
+[stdin] outOfROIPhase = 0
+[stdin] threads till now 1
+[stdin] LOCK instrumentation for pthread_mutex_lock
+[stdin] UNLOCK instrumentation for pthread_mutex_unlock
+[stdin] numCISC on thread 0 = 1000000 ignoreActive = 0
+1 million done on 0
+[stdin] totalNumCISC = 1000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 2000000 ignoreActive = 0
+[stdin] totalNumCISC = 2000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 3000000 ignoreActive = 0
+2 million done on 0
+Reset Statistics for Cache warmup after 2000000 instructions on Core 0
+[stdin] totalNumCISC = 3000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 4000000 ignoreActive = 0
+1 million done on 0
+[stdin] totalNumCISC = 4000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 5000000 ignoreActive = 0
+[stdin] totalNumCISC = 5000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 6000000 ignoreActive = 0
+2 million done on 0
+[stdin] totalNumCISC = 6000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 7000000 ignoreActive = 0
+3 million done on 0
+[stdin] totalNumCISC = 7000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 8000000 ignoreActive = 0
+[stdin] totalNumCISC = 8000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 9000000 ignoreActive = 0
+4 million done on 0
+[stdin] totalNumCISC = 9000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 10000000 ignoreActive = 0
+[stdin] totalNumCISC = 10000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 11000000 ignoreActive = 0
+5 million done on 0
+[stdin] totalNumCISC = 11000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 12000000 ignoreActive = 0
+6 million done on 0
+[stdin] totalNumCISC = 12000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 13000000 ignoreActive = 0
+[stdin] totalNumCISC = 13000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 14000000 ignoreActive = 0
+7 million done on 0
+[stdin] totalNumCISC = 14000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 15000000 ignoreActive = 0
+8 million done on 0
+[stdin] totalNumCISC = 15000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 16000000 ignoreActive = 0
+[stdin] totalNumCISC = 16000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 17000000 ignoreActive = 0
+9 million done on 0
+[stdin] totalNumCISC = 17000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 18000000 ignoreActive = 0
+[stdin] totalNumCISC = 18000000 ignoreActive = 0
+[stdin] numCISC on thread 0 = 19000000 ignoreActive = 0
+10 million done on 0
+within SUBSETSIMCOMPLETE 
+Completed execution for the stream gobbler of stdin stream!!
+Completed execution for the stream gobbler of stderr stream!!
+killing emulator process
+
+
+Simulation completed !!
+killing emulator process

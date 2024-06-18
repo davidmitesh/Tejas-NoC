@@ -1,0 +1,36 @@
+
+
+
+creating instruction pool..
+The executable has 228740 assembly lines
+Total number of assembly lines = 228725
+Total number of micro-operations = 257486
+Newmain : pid = 142513
+coremap 2
+subset sim size = 20000000	true
+marker functions = false	 start marker = 	 end marker = 
+command is : /home/mitesh/Documents/pin-3.21/pin -injection child  -t /home/mitesh/Documents/Tejas/src/emulator/pin/obj-pin/causalityTool.so -maxNumActiveThreads 8 -map 1 -numIgn 0 -numSim 20000000 -id 142513 -traceMethod sharedMemory --    /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/503.bwaves_r/exe/bwaves_r_base.mytest-m64 /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/503.bwaves_r/data/refrate/input/bwaves_1.in
+Pid of the instrumented process is 142563
+00400000-00552000 r-xp 00000000 08:12 11823060                           /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/503.bwaves_r/exe/bwaves_r_base.mytest-m64
+Found start of address in procmaps 4194304
+--  starting java thread0
+[stdin] numIgn = 0
+num of threads on core 0 = 1
+[stdin] numSim = 20000000
+[stdin] id received = 142513
+[stdin] pinpoints file received = nofile
+[stdin] maxNumActiveThreads = 8
+[stdin] start marker = 
+[stdin] end marker = 
+[stdin] outOfROIPhase = 0
+[stdin] threads till now 1
+[stdin]  BI-CGSTAB & symmetric difference scheme 
+[stdin]  3D  Laminar shock wave propagation
+[stdin] thread 0 finished exec
+runnableshm : last packetList received for application-thread 0 numCISC=61380
+Completed execution for the stream gobbler of stdin stream!!
+num of threads on core 0 = 2
+Completed execution for the stream gobbler of stderr stream!!
+killing emulator process
+killing emulator process
+shut down

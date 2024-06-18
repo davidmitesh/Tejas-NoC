@@ -1,0 +1,62 @@
+[Configuration]
+
+EmulatorType: null
+Benchmark:  
+Schedule: Tue Dec 12 22:51:15 NPT 2023
+
+[Translator Statistics]
+
+Number of micro-ops		=	0
+Number of handled CISC instructions	=	0
+Number of PIN CISC instructions	=	0
+Static coverage		=	0.0000 %
+Dynamic Coverage	=	NaN %
+
+
+[Timing Statistics]
+
+Total Cycles taken		=	0
+
+Total IPC		=	            NaN		in terms of micro-ops
+Total IPC		=	            NaN		in terms of CISC instructions
+
+
+
+[Memory System Statistics]
+
+[Per core statistics]
+
+
+
+[Shared Caches]
+
+
+
+[Consolidated Stats For Caches]
+
+
+
+
+[Simulator Time]
+Time Taken		=	28373346 : 15 minutes
+Instructions per Second	=	         0.0000 KIPS		in terms of micro-ops
+Instructions per Second	=	         0.0000 KIPS		in terms of CISC instructions
+
+
+
+[ LeakageEnergy   DynamicEnergy   TotalEnergy   NumDynamicAcc  ComponentName] : 
+
+
+         0.0000	         0.0000	         0.0000	              0	coreEnergy.total
+
+
+
+
+         0.0000	         0.0000	         0.0000	              0	sharedCacheEnergy.total
+
+
+
+         0.0000	         0.0000	         0.0000	              0	mainMemoryControllerEnergy.total
+
+
+         0.0000	         0.0000	         0.0000	              0	coherenceEnergy.total

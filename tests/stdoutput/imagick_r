@@ -1,0 +1,38 @@
+
+
+
+creating instruction pool..
+The executable has 730489 assembly lines
+Total number of assembly lines = 730474
+Total number of micro-operations = 746825
+Newmain : pid = 134395
+coremap 2
+subset sim size = 20000000	true
+marker functions = false	 start marker = 	 end marker = 
+command is : /home/mitesh/Documents/pin-3.21/pin -injection child  -t /home/mitesh/Documents/Tejas/src/emulator/pin/obj-pin/causalityTool.so -maxNumActiveThreads 8 -map 1 -numIgn 0 -numSim 20000000 -id 134395 -traceMethod sharedMemory --    /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.mytest-m64 /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/538.imagick_r/data/refrate/input/refrate_input.tga
+Pid of the instrumented process is 134452
+00400000-0082f000 r-xp 00000000 08:12 11805018                           /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/538.imagick_r/exe/imagick_r_base.mytest-m64
+Found start of address in procmaps 4194304
+[stdin] numIgn = 0
+--  starting java thread0
+num of threads on core 0 = 1
+runnableshm : last packetList received for application-thread 0 numCISC=86534
+[stdin] numSim = 20000000
+[stdin] id received = 134395
+[stdin] pinpoints file received = nofile
+[stdin] maxNumActiveThreads = 8
+[stdin] start marker = 
+[stdin] end marker = 
+[stdin] outOfROIPhase = 0
+[stdin] threads till now 1
+[stdin] thread 0 finished exec
+[stdin] wrote -1 for tid 0
+[stdin] checkSum is 531970
+num of threads on core 0 = 2
+Completed execution for the stream gobbler of stderr stream!!
+Completed execution for the stream gobbler of stdin stream!!
+killing emulator process
+
+
+Simulation completed !!
+killing emulator process
