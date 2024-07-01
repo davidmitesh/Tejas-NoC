@@ -39,11 +39,11 @@
 		<NumInsToIgnore>0</NumInsToIgnore>
 		<NumInsForCacheWarmup>2000000</NumInsForCacheWarmup>	
 		<subsetSim>true</subsetSim>
-		<subsetSimSize>10000000</subsetSimSize>
+		<subsetSimSize>50000000</subsetSimSize>
 		<markerFunctions>false</markerFunctions>
 		<startSimMarker>__parsec_roi_begin</startSimMarker>
 		<endSimMarker>__parsec_roi_end</endSimMarker>
-		<NumCores>8</NumCores>
+		<NumCores>4</NumCores>
 	</Simulation>
 	
 
@@ -299,13 +299,13 @@
 			
 			<Cache firstLevel="true" name="I1" nextLevel="L2" type="ICache_32K_8" />
 			<Cache firstLevel="true" name="L1" nextLevel="L2" type="L1Cache_32K_8" />
-			<!-- <Cache firstLevel="false" name="L2" nextLevel="L3" type="L2Cache_256K_8" />| -->
+			<Cache firstLevel="false" name="L2" nextLevel="L3" type="L2Cache_256K_8" />|
 			
 		</Core>
 		
 		<SharedCaches>
-			<!-- <Cache name="L3" type="L3Cache_1M_8" /> -->
-			<Cache name="L2" type="L2Cache_256K_8" />
+			<Cache name="L3" type="L3Cache_1M_8" />
+			<!-- <Cache name="L2" type="L2Cache_256K_8" /> -->
 			<Cache name="D1" type="Directory1" />
 		</SharedCaches>
 		
@@ -327,7 +327,7 @@
 			<TechPoint>90</TechPoint>
 			<NocConnection>ELECTRICAL</NocConnection>
 			<NocInterChipletLatency>5</NocInterChipletLatency>
-			<IsChiplet>true</IsChiplet>
+			<IsChiplet>false</IsChiplet>
 			<LeakageEnergy>0.1877</LeakageEnergy>
 			<DynamicEnergy>2.1164</DynamicEnergy>
 		</NOC>

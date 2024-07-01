@@ -1,8 +1,8 @@
-#g++ -o hello.o -static hello_world.cpp
+# g++ -o hello.o -static hello_world.cpp
 
-#java -jar /home/mitesh/Documents/Tejas/jars/tejas.jar /home/mitesh/Documents/Tejas/src/simulator/config/config.xml /home/mitesh/Documents/Tejas/tests/hello.out /home/mitesh/Documents/Tejas/tests/hello.o
+# java -jar /home/mitesh/Documents/Tejas/jars/tejas.jar /home/mitesh/Documents/Tejas/src/simulator/config/config.xml /home/mitesh/Documents/Tejas/tests/hello.out /home/mitesh/Documents/Tejas/tests/hello.o
 
-#kill -9 $(ps -aux | grep "hello.o" | grep -v "grep" | awk '{print $2}')
+# kill -9 $(ps -aux | grep "hello.o" | grep -v "grep" | awk '{print $2}')
 
 if [ "$#" -ne 1 ]; then
     echo "Illegal parameters"
@@ -50,7 +50,7 @@ outputfile=$outputfiledir/"bwaves-r_spec"
 else 
 if [ $1 = ocean_ncp ]
 then
-executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/inst/amd64-linux.gcc/bin/ocean_ncp -n258 -p1 -e1e-07 -r20000 -t28800"
+executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/inst/amd64-linux.gcc/bin/ocean_ncp -n258 -p4 -e1e-07 -r20000 -t28800"
 outputfile=$outputfiledir/"ocean-ncp_parsec"
 else 
 if [ $1 = radiosity ]

@@ -16,7 +16,7 @@ def extract_parameter_value(folder_path, passed_string_name):
         equal_sign = '='
     elif passed_string_name == 'ipc':
         parameter_name = 'Total IPC'
-        last_text = 'in terms of micro-ops'
+        last_text = 'in terms of CISC instructions'
         y_label = "IPC"
         equal_sign='='
     elif passed_string_name == 'i_cache_hit':
@@ -38,6 +38,11 @@ def extract_parameter_value(folder_path, passed_string_name):
         parameter_name = 'iTLB[0] Hit-Rate'
         last_text = ''
         y_label = "i-TLB hit rate"
+        equal_sign = '='
+    elif passed_string_name == 'latency':
+        parameter_name = 'Total Cycles taken'
+        last_text = ''
+        y_label = "Total Cycles taken"
         equal_sign = '='
 
     values = []
@@ -72,7 +77,7 @@ plt.style.use('seaborn-darkgrid')
 plt.figure(figsize=(6, 4))
 
 color_map = {'spec': 'blue', 'parsec': 'red'}
-parameters_to_plot = ['branch_predictor','ipc','i_cache_hit','d_cache_hit','average_read_latency_from_memory','tlb']
+parameters_to_plot = ['latency','branch_predictor','ipc','i_cache_hit','d_cache_hit','average_read_latency_from_memory','tlb']
 # passed_string_name = 'tlb'
 for passed_string_name in parameters_to_plot:
 	parameter_values, legends,parameter_name,y_label,file_types = extract_parameter_value(folder_path, passed_string_name)

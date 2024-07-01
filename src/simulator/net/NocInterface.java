@@ -44,7 +44,7 @@ public class NocInterface implements CommunicationInterface{
 	}
 	public NocInterface(NocConfig nocConfig,int chipletId) {
 		super();
-		this.router = new Router(nocConfig, this);
+		this.router = new Router(nocConfig, this,chipletId);
 	}
 	@Override
 	public void sendMessage(Event event) {

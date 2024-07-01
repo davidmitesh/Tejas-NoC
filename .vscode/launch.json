@@ -31,7 +31,7 @@
             "request": "launch",
             "mainClass": "main.Main",
             "projectName": "simulator",
-            "args": ["/home/mitesh/Documents/Tejas/src/simulator/config/config.xml", "/home/mitesh/Documents/Tejas/tests/hello.out", "/home/mitesh/Documents/Tejas/tests/hello.o"]
+            "args": ["/home/mitesh/Documents/Tejas/src/simulator/config/config.xml", "/home/mitesh/Documents/Tejas/tests/ocean_ncp_without_chiplet.out", "/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/src/run.sh"]
         },
         {
             "type": "java",

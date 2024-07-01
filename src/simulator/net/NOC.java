@@ -71,13 +71,14 @@ public class NOC extends InterConnect {
 				this.numChiplets = Integer.parseInt((String)st.nextElement());
 				this.chipletsInfo = new int[this.numChiplets][4];
 				
-				for (int i = 0;i<2;i++){//iterating through chiplets
+				for (int i = 0;i<this.numChiplets;i++){//iterating through chiplets
 					str=readNocConfig.readLine();
 					st = new StringTokenizer(str," ");
-					for (int j=0;j<3;j++){//iterating through row and column index of chiplets
+					for (int j=0;j<4;j++){//iterating through row and column index of chiplets
 						this.chipletsInfo[i][j] = Integer.parseInt((String)st.nextElement());
 					}
 				}
+				nocConfig.chipletsInfo = this.chipletsInfo;
 			
 			} catch (IOException e) {
 				misc.Error.showErrorAndExit("Error in reading noc topology file !!");
@@ -87,7 +88,7 @@ public class NOC extends InterConnect {
 			//with i and j, so that router can be distinguished
 			for (int t=0;t<this.numChiplets;t++){
 				for(int i=this.chipletsInfo[t][0]; i<=this.chipletsInfo[t][1]; i++) {
-					for(int j=this.chipletsInfo[t][2]; j<=this.chipletsInfo[t][2]; j++) {
+					for(int j=this.chipletsInfo[t][2]; j<=this.chipletsInfo[t][3]; j++) {
 						getNetworkElements()[i][j] = createNocInterface(i, j,t);
 					}
 				}

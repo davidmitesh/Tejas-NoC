@@ -47,6 +47,7 @@ public class Router extends Switch{
 	public static int incoming=0;
 	public static int outgoing=0;	
 	int chipletId = -1;
+	protected int interChipletLatency=0;
 	
 	/************************************************************************
      * Method Name  : Router
@@ -69,7 +70,7 @@ public class Router extends Switch{
 		
 		ArchitecturalComponent.addNOCRouter(this);
 	}
-
+// ----------------------MODIFIED -----------------------------////
 	public Router(NocConfig nocConfig, NocInterface reference,int chipletId)
 	{
 		super(nocConfig);
@@ -82,8 +83,11 @@ public class Router extends Switch{
 		this.hopCounters = 0;
 		power = nocConfig.power;
 		this.chipletId = chipletId;
+		this.interChipletLatency = nocConfig.interChipletLatency;
 		ArchitecturalComponent.addNOCRouter(this);
 	}
+// ---------------------------------------------------////
+
 	/***************************************************
 	 * Connects the banks
 	 * @param dir
@@ -230,7 +234,9 @@ public class Router extends Switch{
             }
         }
 		else
-		{
+		{ //this is where a packet or event is sent from one router to another or elements in the NoC
+			//So we need to distinguish whether the next router is within the current chiplet or not
+			// and if not, then add chiplet latency to the event along with the latencyBetween Noc elements
 			nextID = this.RouteComputation(currentId, destinationId);
 			reqOrReply = reqOrReply(currentId, destinationId);              // To avoid deadlock
 			//If buffer is available forward the event
@@ -239,15 +245,27 @@ public class Router extends Switch{
 				//post event to nextID
 				this.hopCounters++;
 				((AddressCarryingEvent)event).hopLength++;
+//-------------------------MODIFIED --------------------------/////				
+				int finalLatency;
+				boolean isIntraChiplet = this.chipletId == this.GetNeighbours().elementAt(nextID.ordinal()).chipletId;
+				if (!isIntraChiplet){
+					finalLatency = latencyBetweenNOCElements+interChipletLatency;
+				}else{
+					finalLatency = latencyBetweenNOCElements;
+				}
+// -------------------------------------------------------------///
 				this.GetNeighbours().elementAt(nextID.ordinal()).getPort().put(
 						event.update(
 								eventQ,
-								latencyBetweenNOCElements,        	//this.getLatency()
+// ----------------------MODIFIED -----------------------------////	interchipletLatency is initially set to 0. If Router is initialized through chiplet constructor path, then only it is set.
+								finalLatency, 
+// --------------------------------------------------////	       	//this.getLatency()
 								this, 
 								this.GetNeighbours().elementAt(nextID.ordinal()),
 								requestType));
 				this.FreeBuffer();
 			}
+
 			//If buffer is not available in next router keep the message here itself
 			else                                              
 			{	//post event to this ID

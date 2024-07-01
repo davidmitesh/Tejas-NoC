@@ -47,8 +47,7 @@ public class NocConfig
 	public int numberOfRows;
 	public String NocTopologyFile;
 	public boolean ischiplet;
-	public int chipletRows;
-	public int chipletColumns; 
+	public int chipletsInfo[][];
 	public int interChipletLatency;
 	
 	public int getLatency() {
