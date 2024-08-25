@@ -34,6 +34,7 @@ import main.ArchitecturalComponent;
 import dram.MainMemoryDRAMController;
 import config.EnergyConfig;
 import config.NocConfig;
+import config.SystemConfig;
 
 public class NOC extends InterConnect {
 
@@ -64,7 +65,7 @@ public class NOC extends InterConnect {
 		nocConfig.numberOfColumns = numColumns;
 		// Create network components
 		networkElements = new NocInterface[numRows][numColumns];
-		if (nocConfig.ischiplet == true){
+		if (nocConfig.chipletConnection == CHIPLETCONNECTIONTYPE.PARALLEL && nocConfig.ischiplet == true){
 			try {
 				str=readNocConfig.readLine();
 				st = new StringTokenizer(str," ");
@@ -94,10 +95,26 @@ public class NOC extends InterConnect {
 				}
 			}
 				
+		}else if (nocConfig.chipletConnection == CHIPLETCONNECTIONTYPE.SERIAL && nocConfig.ischiplet == true){
+
+			for(int i=0; i<16; i++) {
+				for(int j=0; j<16; j++) {
+					if (i%4 == 0 || j%4 == 0 || i%4 == 3 || j%4 == 3){
+						//Means interfacce nodes-- considering each chiplet of size 4*4
+						//TODO - make it generic
+						getNetworkElements()[i][j] = createNocInterface(i, j,true);
+					}else{
+						getNetworkElements()[i][j] = createNocInterface(i, j,false);
+					}
+
+					
+				}
+			}
 		}else{
 			for(int i=0; i<numRows; i++) {
 				for(int j=0; j<numColumns; j++) {
-					getNetworkElements()[i][j] = createNocInterface(i, j);
+					
+						getNetworkElements()[i][j] = createNocInterface(i, j);
 				}
 			}
 		}
@@ -106,6 +123,13 @@ public class NOC extends InterConnect {
 
 	private NocInterface createNocInterface(int i, int j) {
 		NocInterface nocInterface = new NocInterface(nocConfig);
+		ID id = new ID(i, j);
+		nocInterface.setId(id);
+		return nocInterface;
+	}
+
+	private NocInterface createNocInterface(int i, int j,boolean isInterfaceNode) {
+		NocInterface nocInterface = new NocInterface(nocConfig,isInterfaceNode);
 		ID id = new ID(i, j);
 		nocInterface.setId(id);
 		return nocInterface;
@@ -127,11 +151,17 @@ public class NOC extends InterConnect {
 		STAR,
 		FATTREE,
 		OMEGA,
-		BUTTERFLY
+		BUTTERFLY,
+		CHIPLETSERIAL
 	}
 	public static enum CONNECTIONTYPE{
 		ELECTRICAL,
 		OPTICAL
+	}
+
+	public static enum CHIPLETCONNECTIONTYPE{
+		SERIAL,
+		PARALLEL
 	}
 
 	public static BufferedReader openTopologyFile(String fileName){
@@ -194,6 +224,9 @@ public class NOC extends InterConnect {
 		case FATTREE :
 			ConnectNOCElementsFatTree(networkElements, numColumns, nocConfig);
 			break;
+		case CHIPLETSERIAL :
+			ConnectNOCSerialChiplet(networkElements,numRows,numColumns);
+			break;
 		}
 	}
 
@@ -229,6 +262,53 @@ public class NOC extends InterConnect {
 					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.LEFT);
 				else
 					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.LEFT, networkElements[i][(j-1)]);
+			}
+		}
+	}
+
+	//This is for connecting hypercube topology for inter-chiplet
+	//interface connection and 2d mesh for intrachiplet connections
+	public void ConnectNOCSerialChiplet(NocInterface[][] networkElements,int bankRows,int bankColumns)  //connect bank in MESH fashion
+	{
+		int i,j;
+		// Hardcoded for now the number of nodes in serial based chplet architecture
+		for(i=0;i<16;i++)
+		{
+			for(j=0;j<16;j++)
+			{
+				
+				if(i%4==0)                        //setting null for 0th raw up connection
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.UP);
+				else
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.UP, networkElements[i-1][j]);
+
+				if(j%4==bankColumns-1)             //right connections
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.RIGHT);
+				else
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.RIGHT, networkElements[i][(j+1)]);
+
+				if(i%4==bankRows-1)             //down connections
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.DOWN);
+				else
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.DOWN, networkElements[i+1][j]);
+
+				if(j%4==0)			            //left connections
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.LEFT);
+				else
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.LEFT, networkElements[i][(j-1)]);
+
+				if (i%4==0 || j%4==bankColumns-1|| i%4==bankRows-1 || j%4==0){
+					int current_chiplet_number = getChipletNumberFromCoordinates(i, j);
+					int[] current_chiplet_connections = SystemConfig.nocConfig.connections[current_chiplet_number];
+					int current_interface_id = getInterfaceId(i, j);
+					if (current_interface_id == -1){
+						System.err.println("Core node is sent to find interface id of!\n");
+						System.exit(1);
+					}
+					int next_chiplet_to_connect =current_chiplet_connections[current_interface_id];
+					int[] destination_coordinates = findCoordinatesGivenDestinationAndOffset(i, j,next_chiplet_to_connect);
+					networkElements[i][j].getRouter().SetConnectedNOCElements(RoutingAlgo.DIRECTION.OUT, networkElements[destination_coordinates[0]][destination_coordinates[1]]);
+				}
 			}
 		}
 	}
@@ -612,5 +692,33 @@ public class NOC extends InterConnect {
 		}
 		
 		return energyConfig;
+	}
+	//this returns the interface id(from 0 to 4) for given coordinate of the node- this is for hypercube based serial connection
+	public static int getInterfaceId(int i,int j){
+		int normalized_i = i%4;
+		int normalized_j = j%4;
+		if (normalized_i == 0 && normalized_j>0 && normalized_j<=3)
+			return 2; //return interface id as 2
+		else if (normalized_j == 3 && normalized_i>0 && normalized_i<=3)
+			return 1;
+		else if (normalized_i == 3 && normalized_j>=0 && normalized_j<3)
+			return 0;
+		else if (normalized_j == 0 && normalized_i>=0 && normalized_i<3)
+			return 3;
+		return -1;
+	}
+
+	//This returns chiplet number from 0 to 15(total 16) given chiplet coordinates
+	public static int getChipletNumberFromCoordinates(int i,int j){
+		int result = (int)(Math.floor(j/4)*4 + Math.floor(i/4));
+		return result;
+	}
+
+	//This function gives the destination coordinates given the destination chiplet number 
+	//and current offset in terms of row and column
+	public static int[] findCoordinatesGivenDestinationAndOffset(int i,int j, int chipletNumber){
+		int row = (int)(Math.floor(chipletNumber/4)*4 + i%4);
+		int column = (chipletNumber*4 + j%4)%16;
+		return new int[]{row,column};
 	}
 }

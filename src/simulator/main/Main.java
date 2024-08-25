@@ -80,7 +80,7 @@ public class Main {
 			executableAndArguments[i-2] = arguments[i]; 
 			benchmarkArguments = benchmarkArguments + " " + arguments[i];
 		}
-		
+		System.out.println("benchmark Arguments is : " + benchmarkArguments);
 		// Parse the command line arguments
 		XMLParser.parse(configFileName);
 
@@ -170,7 +170,7 @@ public class Main {
 		runners = new RunnableThread[SystemConfig.maxNumJavaThreads];
 		
 		String emulatorArguments = constructEmulatorArguments(benchmarkArguments);
-		
+		System.out.println("emulatorArguments is : " + emulatorArguments);
 		//added by harveenk
 		//uncomment for printing debug info
 		//debugPrinter = new DebugPrinter("kush_event_log");

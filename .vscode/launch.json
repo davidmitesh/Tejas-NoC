@@ -31,7 +31,7 @@
             "request": "launch",
             "mainClass": "main.Main",
             "projectName": "simulator",
-            "args": ["/home/mitesh/Documents/Tejas/src/simulator/config/config.xml", "/home/mitesh/Documents/Tejas/tests/ocean_ncp_without_chiplet.out", "/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/src/run.sh"]
+            "args": ["/home/mitesh/Documents/Tejas/src/simulator/config/config.xml", "/home/mitesh/Documents/Tejas/tests/spec_test.out", "/home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.miteshTest-m64 /home/mitesh/Documents/spec2017/SPEC2017/benchspec/CPU/505.mcf_r/data/refrate/input/inp.in"]
         },
         {
             "type": "java",
@@ -39,6 +39,13 @@
             "request": "launch",
             "mainClass": "pipeline.PipelineTests",
             "projectName": "simulator"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach) - Remote",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005
         }
     ]
 }

@@ -27,6 +27,7 @@ import net.NOC.CONNECTIONTYPE;
 import net.NOC.TOPOLOGY;
 import net.RoutingAlgo.ARBITER;
 import net.RoutingAlgo.SELSCHEME;
+import net.NOC.CHIPLETCONNECTIONTYPE;
 
 public class NocConfig
 {
@@ -49,6 +50,10 @@ public class NocConfig
 	public boolean ischiplet;
 	public int chipletsInfo[][];
 	public int interChipletLatency;
+	public CHIPLETCONNECTIONTYPE chipletConnection;
+
+	//Here it is hardcoded that there will be 16 chiplets with each chiplet having four interfaces
+	public int[][] connections = new int[16][4];
 	
 	public int getLatency() {
 		return latency;
@@ -65,6 +70,37 @@ public class NocConfig
 		this.latency = latency;
 	}
 
+	public void setConnectionsForSerialNoc(){
+		int n = 4;  // You can change this value to any n you want
+        int numChiplets = (int) Math.pow(2, n);
+
+        // Create a matrix to hold the connections
+        int[][] connections = new int[numChiplets][n];
+
+        // Calculate the coordinates and connections for each chiplet
+        for (int i = 0; i < numChiplets; i++) {
+            // Calculate the coordinates of the ith chiplet
+            int[] Ci = new int[n];
+            for (int k = 0; k < n; k++) {
+                Ci[k] = (i / (int) Math.pow(2, k)) % 2;
+            }
+
+            // Connect the output ports of the jth interface group of Ci
+            for (int j = 0; j < n; j++) {
+                int[] Ci_j = Ci.clone();
+                Ci_j[j] = 1 - Ci[j];
+
+                // Calculate the index of the connected chiplet
+                int connectedChiplet = 0;
+                for (int k = 0; k < n; k++) {
+                    connectedChiplet += Ci_j[k] * (int) Math.pow(2, k);
+                }
+
+                connections[i][j] = connectedChiplet;
+            }
+        }
+		this.connections = connections;
+	}
 	public void setAccessPorts(int accessPorts) {
 		this.accessPorts = accessPorts;
 	}

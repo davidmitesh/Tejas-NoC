@@ -38,6 +38,7 @@ import main.Emulator;
 import main.Main;
 import memorysystem.nuca.NucaCache.Mapping;
 import memorysystem.nuca.NucaCache.NucaType;
+import net.NOC.CHIPLETCONNECTIONTYPE;
 import net.NOC.CONNECTIONTYPE;
 import net.NOC.TOPOLOGY;
 import net.RoutingAlgo;
@@ -825,6 +826,8 @@ public class XMLParser
 		
 		tempStr = getImmediateString("NocConnection", NocType);
 		nocConfig.ConnType = CONNECTIONTYPE.valueOf(tempStr);
+		tempStr = getImmediateString("ChipletConnectionType", NocType);
+		nocConfig.chipletConnection = CHIPLETCONNECTIONTYPE.valueOf(tempStr);
 	}
 	
 	private static void setCacheProperties(Element CacheType, CacheConfig cache)

@@ -39,11 +39,11 @@
 		<NumInsToIgnore>0</NumInsToIgnore>
 		<NumInsForCacheWarmup>2000000</NumInsForCacheWarmup>	
 		<subsetSim>true</subsetSim>
-		<subsetSimSize>50000000</subsetSimSize>
+		<subsetSimSize>10000000</subsetSimSize>
 		<markerFunctions>false</markerFunctions>
 		<startSimMarker>__parsec_roi_begin</startSimMarker>
 		<endSimMarker>__parsec_roi_end</endSimMarker>
-		<NumCores>4</NumCores>
+		<NumCores>8</NumCores>
 	</Simulation>
 	
 
@@ -299,17 +299,17 @@
 			
 			<Cache firstLevel="true" name="I1" nextLevel="L2" type="ICache_32K_8" />
 			<Cache firstLevel="true" name="L1" nextLevel="L2" type="L1Cache_32K_8" />
-			<Cache firstLevel="false" name="L2" nextLevel="L3" type="L2Cache_256K_8" />|
+			<!-- <Cache firstLevel="false" name="L2" nextLevel="L3" type="L2Cache_256K_8" />| -->
 			
 		</Core>
 		
 		<SharedCaches>
-			<Cache name="L3" type="L3Cache_1M_8" />
-			<!-- <Cache name="L2" type="L2Cache_256K_8" /> -->
+			<!-- <Cache name="L3" type="L3Cache_1M_8" /> -->
+			<Cache name="L2" type="L2Cache_256K_8" />
 			<Cache name="D1" type="Directory1" />
 		</SharedCaches>
 		
-		<Interconnect>Bus</Interconnect>
+		<Interconnect>Noc</Interconnect>
 		
 		<NOC>
 			<NocConfigFile>/home/mitesh/Documents/Tejas/src/simulator/config/NocConfig.txt</NocConfigFile>
@@ -321,7 +321,7 @@
 			<NocLatency>1</NocLatency>
 			<NocOperatingFreq>2000</NocOperatingFreq>
 			<NocTopology>TORUS</NocTopology>     
-			<NocRoutingAlgorithm>SIMPLE</NocRoutingAlgorithm>
+			<NocRoutingAlgorithm>NEGATIVEFIRST</NocRoutingAlgorithm>
 			<NocLatencyBetweenNOCElements>4</NocLatencyBetweenNOCElements>
 			<NocRouterArbiter>RR_ARBITER</NocRouterArbiter>
 			<TechPoint>90</TechPoint>
@@ -330,6 +330,7 @@
 			<IsChiplet>false</IsChiplet>
 			<LeakageEnergy>0.1877</LeakageEnergy>
 			<DynamicEnergy>2.1164</DynamicEnergy>
+			<ChipletConnectionType>PARALLEL</ChipletConnectionType>
 		</NOC>
 		
 	<BUS>
@@ -346,7 +347,7 @@
 			<rankOccupancy>1</rankOccupancy>
 			<rankLatency>100</rankLatency>
 			<rankOperatingFrequency>3600</rankOperatingFrequency>
-			<numChans>2</numChans>      
+			<numChans>1</numChans>      
 			<numRanks>2</numRanks>      
 			<numBanks>8</numBanks>      
 			<numRows>16384</numRows>      
@@ -428,7 +429,7 @@
 		</ICache_32K_8>
 		
 		<L1Cache_32K_8>
-			<WriteMode>WT</WriteMode>			
+			<WriteMode>WB</WriteMode>			
 			<BlockSize>64</BlockSize>			
 			<Associativity>8</Associativity>
 			<Size>32768</Size>					
@@ -462,7 +463,7 @@
 			<NumBuses>1</NumBuses>			
 			<MSHRSize>256</MSHRSize>
 			<BusOccupancy>0</BusOccupancy>
-			<Nuca>NONE</Nuca>						
+			<Nuca>S_NUCA</Nuca>						
 			<ONuca>NONE</ONuca>						
 			<NucaMapping>S</NucaMapping>            			
 			<LeakageEnergy>0.1592</LeakageEnergy>

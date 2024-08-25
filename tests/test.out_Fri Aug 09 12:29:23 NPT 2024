@@ -1,0 +1,110 @@
+[Configuration]
+
+EmulatorType: pin
+Benchmark: /home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/inst/amd64-linux.gcc/bin/ocean_ncp
+Schedule: Fri Aug 09 12:29:22 NPT 2024
+
+[Main Memory Configuration]
+RAM frequency:800.0 MHz
+Num Channels: 2
+Num Ranks: 2
+Num Banks: 8
+Row Buffer Policy: OpenPage
+Scheduling Policy: RankThenBankRoundRobin
+Queuing Structure: PerRank
+
+[Translator Statistics]
+
+Java thread	=	0
+Data Read	=	1000 bytes
+Number of micro-ops		=	266
+Number of handled CISC instructions	=	257
+Number of PIN CISC instructions	=	465
+Static coverage		=	97.8548 %
+Dynamic Coverage	=	55.2688 %
+
+
+[Timing Statistics]
+
+Total Cycles taken		=	0
+
+Total IPC		=	       Infinity		in terms of micro-ops
+Total IPC		=	       Infinity		in terms of CISC instructions
+
+Nothing executed on core 0
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+
+
+[Memory System Statistics]
+
+[Per core statistics]
+
+Nothing executed on core 0
+Nothing executed on core 1
+Nothing executed on core 2
+Nothing executed on core 3
+
+
+[Shared Caches]
+
+
+
+L2[0] Hits	=	0
+L2[0] Misses	=	0
+L2[0] Accesses	=	0
+L2[0] Hit-Rate	=	NaN
+L2[0] Miss-Rate	=	NaN
+L2[0] AvgNumEventsInMSHR	=	NaN
+L2[0] AvgNumEventsInMSHREntry	=	NaN
+
+
+[Consolidated Stats For Caches]
+
+
+
+L2 Hits	=	0
+L2 Misses	=	0
+L2 Accesses	=	0
+L2 Hit-Rate	=	NaN
+L2 Miss-Rate	=	NaN
+L2 AvgNumEventsInMSHR	=	NaN
+L2 AvgNumEventsInMSHREntry	=	NaN
+
+
+NOC Topology		=	TORUS
+NOC Routing Algorithm	=	NEGATIVEFIRST
+
+[RAM statistics]
+
+For channel 0:
+Average Read Latency: -1.0 cycles = -0.3125 ns
+	 Rank 1
+		 Bank 1 ::  Reads : 0 | Writes: 0
+
+		 Bank 2 ::  Reads : 0 | Writes: 0
+
+		 Bank 3 ::  Reads : 0 | Writes: 0
+
+		 Bank 4 ::  Reads : 0 | Writes: 0
+
+		 Bank 5 ::  Reads : 0 | Writes: 0
+
+		 Bank 6 ::  Reads : 0 | Writes: 0
+
+		 Bank 7 ::  Reads : 0 | Writes: 0
+
+		 Bank 8 ::  Reads : 0 | Writes: 0
+
+	 Total Reads: 0	 Total Writes: 0
+	 Rank 2
+		 Bank 1 ::  Reads : 0 | Writes: 0
+
+		 Bank 2 ::  Reads : 0 | Writes: 0
+
+		 Bank 3 ::  Reads : 0 | Writes: 0
+
+		 Bank 4 ::  Reads : 0 | Writes: 0
+
+		 Bank 5 ::  Rea

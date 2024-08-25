@@ -19,6 +19,7 @@ import java.util.Vector;
 import config.CacheConfig;
 import config.MainMemoryConfig;
 import config.SystemConfig;
+import config.NocConfig;
 
 import memorysystem.Cache;
 import memorysystem.CoreMemorySystem;
@@ -33,7 +34,7 @@ import net.NOC;
 import net.Router;
 import pipeline.outoforder.ICacheBuffer;
 import pipeline.outoforder.OutOrderExecutionEngine;
-
+import net.NOC.CHIPLETCONNECTIONTYPE;
 public class ArchitecturalComponent {
 	
 	public static Vector<Core> cores = new Vector<Core>();
@@ -129,6 +130,7 @@ public class ArchitecturalComponent {
 		
 		int numRows = ((NOC)interconnect).getNumRows();
 		int numColumns = ((NOC)interconnect).getNumColumns();
+		String[][] stringArray = new String[numRows][numColumns];
 		for(int i=0;i<numRows;i++)
 		{
 			String str = null;
@@ -144,7 +146,7 @@ public class ArchitecturalComponent {
 			for(int j=0;j<numColumns;j++)
 			{
 				String nextElementToken = (String)st.nextElement();
-				
+				stringArray[i][j] = nextElementToken;
 				//System.out.println("NOC [" + i + "][" + j + "] = " + nextElementToken);
 				
 				CommunicationInterface comInterface = ((NOC)interconnect).getNetworkElements()[i][j];
@@ -163,6 +165,32 @@ public class ArchitecturalComponent {
 					Cache c = MemorySystem.createSharedCache(nextElementToken, comInterface);
 					//TODO split and multiple shared caches
 				} 
+			}
+		}
+
+		if (SystemConfig.nocConfig.chipletConnection == CHIPLETCONNECTIONTYPE.SERIAL && SystemConfig.nocConfig.ischiplet){
+			SystemConfig.nocConfig.setConnectionsForSerialNoc();
+			//The values of rows and columns of the chiplets is assumed to be
+			//4*4 for now and is hardcoded where each chiplet consists of 4*4 nodes 
+			for (int i = 4;i<16;i++){
+				for(int j=4;j<16;j++){
+					CommunicationInterface comInterface = ((NOC)interconnect).getNetworkElements()[i][j];
+					String symbol = stringArray[i%4][j%4];
+					if(symbol.equals("C")){
+						Core core = createCore(cores.size());
+						cores.add(core);
+						core.setComInterface(comInterface);
+					} else if(symbol.equals("M")) {
+						MainMemoryDRAMController mainMemController = new MainMemoryDRAMController(SystemConfig.mainMemoryConfig);
+						memoryControllers.add(mainMemController);
+						mainMemController.setComInterface(comInterface);
+					} else if(symbol.equals("-")) {
+						//do nothing
+					} else {
+						Cache c = MemorySystem.createSharedCache(symbol, comInterface);
+						//TODO split and multiple shared caches
+					}
+				}
 			}
 		}
 	}	

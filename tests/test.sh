@@ -50,8 +50,8 @@ outputfile=$outputfiledir/"bwaves-r_spec"
 else 
 if [ $1 = ocean_ncp ]
 then
-executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/inst/amd64-linux.gcc/bin/ocean_ncp -n258 -p4 -e1e-07 -r20000 -t28800"
-outputfile=$outputfiledir/"ocean-ncp_parsec"
+executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_ncp/inst/amd64-linux.gcc/bin/ocean_ncp -n258 -p8 -e1e-07 -r20000 -t28800"
+outputfile=$outputfiledir/"ocean-ncp_parsec_directorytrial"
 else 
 if [ $1 = radiosity ]
 then
@@ -60,7 +60,7 @@ outputfile=$outputfiledir/"radiosity_parsec"
 else 
 if [ $1 = ocean_cp ]
 then
-executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_cp/inst/amd64-linux.gcc/bin/ocean_cp -n258 -p1 -e1e-07 -r20000 -t28800"
+executable="/home/mitesh/Documents/parsec-3.0/ext/splash2/apps/ocean_cp/inst/amd64-linux.gcc/bin/ocean_cp -n258 -p8 -e1e-07 -r20000 -t28800"
 outputfile=$outputfiledir/"ocean-cp_parsec"
 else 
 if [ $1 = blackscholes ]

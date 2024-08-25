@@ -45,7 +45,8 @@ public class RoutingAlgo{
 		UP,
 		RIGHT,
 		DOWN,
-		LEFT
+		LEFT,
+		OUT
 	}
 	public static enum ARBITER{
 		MATRIX_ARBITER ,

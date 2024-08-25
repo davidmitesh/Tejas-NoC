@@ -46,6 +46,10 @@ public class NocInterface implements CommunicationInterface{
 		super();
 		this.router = new Router(nocConfig, this,chipletId);
 	}
+	public NocInterface(NocConfig nocConfig,boolean isInterfaceNode) {
+		super();
+		this.router = new Router(nocConfig, this,isInterfaceNode);
+	}
 	@Override
 	public void sendMessage(Event event) {
 		if(SystemConfig.nocConfig.ConnType == CONNECTIONTYPE.OPTICAL)

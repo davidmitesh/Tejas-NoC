@@ -48,6 +48,7 @@ public class Router extends Switch{
 	public static int outgoing=0;	
 	int chipletId = -1;
 	protected int interChipletLatency=0;
+	boolean isInterfaceNode;
 	
 	/************************************************************************
      * Method Name  : Router
@@ -84,6 +85,22 @@ public class Router extends Switch{
 		power = nocConfig.power;
 		this.chipletId = chipletId;
 		this.interChipletLatency = nocConfig.interChipletLatency;
+		ArchitecturalComponent.addNOCRouter(this);
+	}
+
+	public Router(NocConfig nocConfig, NocInterface reference,boolean isInterfaceNode)
+	{
+		super(nocConfig);
+		this.topology = nocConfig.topology;
+		this.rAlgo = nocConfig.rAlgo;
+		this.numberOfRows = nocConfig.numberOfRows;
+		this.numberOfColumns = nocConfig.numberOfColumns;
+		this.latencyBetweenNOCElements = nocConfig.latencyBetweenNOCElements;
+		this.neighbours= new Vector<Router>(5);
+		this.hopCounters = 0;
+		this.isInterfaceNode = isInterfaceNode;
+		power = nocConfig.power;
+		
 		ArchitecturalComponent.addNOCRouter(this);
 	}
 // ---------------------------------------------------////
@@ -234,43 +251,101 @@ public class Router extends Switch{
             }
         }
 		else
-		{ //this is where a packet or event is sent from one router to another or elements in the NoC
-			//So we need to distinguish whether the next router is within the current chiplet or not
-			// and if not, then add chiplet latency to the event along with the latencyBetween Noc elements
-			nextID = this.RouteComputation(currentId, destinationId);
-			reqOrReply = reqOrReply(currentId, destinationId);              // To avoid deadlock
-			//If buffer is available forward the event
-			if(this.CheckNeighbourBuffer(nextID,reqOrReply))   
-			{
-				//post event to nextID
-				this.hopCounters++;
-				((AddressCarryingEvent)event).hopLength++;
-//-------------------------MODIFIED --------------------------/////				
-				int finalLatency;
-				boolean isIntraChiplet = this.chipletId == this.GetNeighbours().elementAt(nextID.ordinal()).chipletId;
-				if (!isIntraChiplet){
-					finalLatency = latencyBetweenNOCElements+interChipletLatency;
-				}else{
-					finalLatency = latencyBetweenNOCElements;
-				}
-// -------------------------------------------------------------///
-				this.GetNeighbours().elementAt(nextID.ordinal()).getPort().put(
-						event.update(
-								eventQ,
-// ----------------------MODIFIED -----------------------------////	interchipletLatency is initially set to 0. If Router is initialized through chiplet constructor path, then only it is set.
-								finalLatency, 
-// --------------------------------------------------////	       	//this.getLatency()
-								this, 
-								this.GetNeighbours().elementAt(nextID.ordinal()),
-								requestType));
-				this.FreeBuffer();
-			}
 
-			//If buffer is not available in next router keep the message here itself
-			else                                              
-			{	//post event to this ID
-				this.getPort().put(	event.update(this,this));
+		{
+			if (SystemConfig.nocConfig.chipletConnection == net.NOC.CHIPLETCONNECTIONTYPE.SERIAL && SystemConfig.nocConfig.ischiplet == true)
+			{
+				int currentChipletId = net.NOC.getChipletNumberFromCoordinates(currentId.x, currentId.y);
+				int destinationChipletId =  net.NOC.getChipletNumberFromCoordinates(destinationId.x, destinationId.y);
+				int finalLatency;
+				if (currentChipletId != destinationChipletId){
+					
+					int[] connectionForCurrentChiplet = SystemConfig.nocConfig.connections[currentChipletId];
+					int interfaceId = 0;
+					while (destinationChipletId > connectionForCurrentChiplet[interfaceId])
+						interfaceId++;
+					if (this.isInterfaceNode){
+						//Making IF-NODE-TO-NODE-ROUTING
+						int currentInterfaceId = net.NOC.getInterfaceId(currentId.x, currentId.y);
+						if (currentInterfaceId != interfaceId){
+							nextID = makeIncrementInIfNode(currentInterfaceId);
+							finalLatency = latencyBetweenNOCElements;
+						}else{
+							nextID = RoutingAlgo.DIRECTION.OUT;
+							finalLatency = interChipletLatency;
+						}
+					}else{
+						//Making Core-to-IF routing
+						nextID = makeIncrementInCoreToIfNode(interfaceId);
+						finalLatency = latencyBetweenNOCElements;
+					}
+				}else{
+					nextID = this.RouteComputation(currentId, destinationId);
+					finalLatency = latencyBetweenNOCElements;
+				}	
+				if(this.CheckNeighbourBuffer(nextID,false))   
+					{
+						//post event to nextID
+						this.hopCounters++;
+						((AddressCarryingEvent)event).hopLength++;
+						this.GetNeighbours().elementAt(nextID.ordinal()).getPort().put(
+								event.update(
+										eventQ,
+										finalLatency,
+										this, 
+										this.GetNeighbours().elementAt(nextID.ordinal()),
+										requestType));
+						this.FreeBuffer();
+					}else
+					{	//post event to this ID
+						this.getPort().put(	event.update(this,this));
+					}
+			}else
+			{
+				//this is where a packet or event is sent from one router to another or elements in the NoC
+				//So we need to distinguish whether the next router is within the current chiplet or not
+				// and if not, then add chiplet latency to the event along with the latencyBetween Noc elements
+				nextID = this.RouteComputation(currentId, destinationId);
+				reqOrReply = reqOrReply(currentId, destinationId);              // To avoid deadlock
+				//If buffer is available forward the event
+				if(this.CheckNeighbourBuffer(nextID,reqOrReply))   
+				{
+					//post event to nextID
+					this.hopCounters++;
+					((AddressCarryingEvent)event).hopLength++;
+	//-------------------------MODIFIED --------------------------/////				
+					int finalLatency;
+					if(SystemConfig.nocConfig.ischiplet == true){
+						boolean isIntraChiplet = this.chipletId == this.GetNeighbours().elementAt(nextID.ordinal()).chipletId;
+						if (!isIntraChiplet){
+							finalLatency = latencyBetweenNOCElements+interChipletLatency;
+						}else{
+							finalLatency = latencyBetweenNOCElements;
+						}
+					}else{
+						finalLatency = latencyBetweenNOCElements;
+					}
+//		System.out.printf("Event transfer happened: from router: %s to %s.%n",id.toString(),nextID.toString());
+	// -------------------------------------------------------------///
+					this.GetNeighbours().elementAt(nextID.ordinal()).getPort().put(
+							event.update(
+									eventQ,
+	// ----------------------MODIFIED -----------------------------////	interchipletLatency is initially set to 0. If Router is initialized through chiplet constructor path, then only it is set.
+									finalLatency, 
+	// --------------------------------------------------////	       	//this.getLatency()
+									this, 
+									this.GetNeighbours().elementAt(nextID.ordinal()),
+									requestType));
+					this.FreeBuffer();
+				}
+
+				//If buffer is not available in next router keep the message here itself
+				else                                              
+				{	//post event to this ID
+					this.getPort().put(	event.update(this,this));
+				}
 			}
+			
 		}
 	}
 
@@ -306,5 +381,28 @@ public class Router extends Switch{
 	
 	public ID getID() {
 		return id;
+	}
+
+	RoutingAlgo.DIRECTION makeIncrementInIfNode(int interfaceId){
+		if (interfaceId == 0)
+			return RoutingAlgo.DIRECTION.RIGHT ;
+		else if (interfaceId == 1)
+			return RoutingAlgo.DIRECTION.UP;
+		else if (interfaceId == 2)
+			return RoutingAlgo.DIRECTION.LEFT;
+		else
+			return RoutingAlgo.DIRECTION.DOWN;
+		
+	}
+
+	RoutingAlgo.DIRECTION makeIncrementInCoreToIfNode(int interfaceId){
+		if (interfaceId == 0)
+			return RoutingAlgo.DIRECTION.DOWN;
+		else if (interfaceId == 1)
+			return RoutingAlgo.DIRECTION.RIGHT;
+		else if (interfaceId == 2)
+			return RoutingAlgo.DIRECTION.UP;
+		else
+			return RoutingAlgo.DIRECTION.LEFT;
 	}
 }
